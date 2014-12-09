@@ -15,6 +15,6 @@ Usage:
 
 Notes:
 
-This works, but could use a lot more configuration options to be (sitemap index, proper multisite support, options for class limiting, etc.)
+This works, but could use a lot more configuration options to be (sitemap index, proper multisite support, options for class limiting, etc.) and removing hard coded values to configurations.
 
 Feel free to fork.
