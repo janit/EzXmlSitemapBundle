@@ -1,0 +1,3 @@
+janit_ez_xml_sitemap:
+    path:     /sitemap.xml
+    defaults: { _controller: JanitEzXmlSitemapBundle:Default:simpleSitemap }
