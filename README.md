@@ -2,3 +2,19 @@ EzXmlSitemapBundle
 ==================
 
 Simple eZ Publish Symfony Stack Sitemap Generator
+
+Installation:
+
+ * Clone to src
+ * Add to ezpublish/EzPublishKernel.php
+ * Clear caches
+
+Usage:
+
+ * Open http://example.com/sitemap.xml
+
+Notes:
+
+This works, but could use a lot more configuration options to be (sitemap index, proper multisite support, options for class limiting, etc.)
+
+Feel free to fork.
