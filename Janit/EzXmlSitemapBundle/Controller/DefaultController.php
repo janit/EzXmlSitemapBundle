@@ -14,6 +14,7 @@ class DefaultController extends Controller
 
     public function simpleSitemapAction()
     {
+        set_time_limit(-1);
 
         $response = new Response();
         $response->setPublic();
@@ -26,21 +27,14 @@ class DefaultController extends Controller
 
         $rootLocation = $repository->getLocationService()->loadLocation($rootLocationId);
 
-        $criteria = array(
+        $criteria = [
             new Criterion\Subtree($rootLocation->pathString),
             new Criterion\Visibility( Criterion\Visibility::VISIBLE )
-        );
+        ];
 
-        if ( !empty( $criterion ) )
-            $criteria[] = $criterion;
+        $query = new LocationQuery(['filter' => new Criterion\LogicalAnd( $criteria )]);
 
-        $query = new LocationQuery(
-            array(
-                'criterion' => new Criterion\LogicalAnd( $criteria )
-            )
-        );
-
-        $query->limit = 1000;
+        $query->limit = 1000000;
 
         $searchService = $repository->getSearchService();
 
